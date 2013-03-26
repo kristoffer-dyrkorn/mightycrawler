@@ -1,0 +1,60 @@
+Version 0.7
+
+* improved detection and logging of http redirects
+* database directory path now configurable
+* removed parse and store queues, simplifying code
+* proxy support removed (for now)
+* now using apache db utils for database code
+* now spooling large jdbc result sets to disk, thus constraining RAM usage
+* updated all dependencies to latest versions
+
+Version 0.6, oct 26, 2011
+
+* renamed "store" configuration flag to "download"
+* renamed "ignoreCookies" configuration flag to "useCookies"
+* fixed an URL encoding bug in redirection detection and logging
+* improved the handling of empty URL lists
+* improved the uniqueness of file names when storing downloaded HTML
+* improved log output
+
+Version 0.5, sept 30, 2011
+
+* Readability of README improved (thanks to kjbekkelund!)
+* Treats visiting an URL separately from downloading the content of an URL
+* The number of either visited pages or downloaded pages can be used as termination condition
+* Cookie support can be turned off (so sessions will be non-sticky, thus spreading crawler load)
+* Support for HTTP redirects can be turned off
+* Use disk-based instead of RAM-based database to reduce heap usage, especially for large crawls
+
+Version 0.4, sept 2, 2011
+
+* Split configuration of (http) response encoding and file (output) encoding
+* Supports multiple start URLs for crawling
+* Supports using list of URLs as input (thus disabling crawling)
+* Downloaded HTML (along with the URL) is stored inside XML files. Direct URL-to-file-path mapping is abandoned due to:
+- URLs can be longer than file system naming limits (in Windows the limit is 255 characters)
+- URLs can contain characters not allowed in file names (in Windows, "?" and ":" are not allowed)
+- http://www.server.com/test and http://www.server.com/test/ are different resources but would map to a single file name unless some kind of magic mapping were applied
+* Packaging is based on mvn assembly plugin
+
+Version 0.3, jun 24, 2011
+
+* Made logging configuration easier and more accessible.
+* Fixed counting bug (number of pages downloaded).
+* Removed dependencies on various JARs unavailable through Maven
+* Updated HttpCore version to 4.1.1
+* Added proxy support. NOTE: Proxy authentication is experimental.
+
+Version 0.2, apr 18, 2011
+
+* Fixed a timeout bug (now using response timeout instead of socket connect timeout)
+* Support for both http and https protocols
+* Support for terminating crawler after N recursion levels of crawling
+* Config file can be specified as command line parameter
+* Some more examples in the provided crawler.properties file
+* Restructured code to support various filters (crawling rules)
+* Upgraded HttpClient version to 4.1.1 and HttpCore to 4.1
+
+Version 0.1, apr 6, 2011
+
+* Initial release

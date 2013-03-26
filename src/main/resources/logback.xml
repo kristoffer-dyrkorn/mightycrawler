@@ -1,0 +1,22 @@
+<configuration>
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender"> 
+		<encoder>
+			<pattern>%d %le %logger - %m%n</pattern>
+		</encoder>
+	</appender>
+	<appender name="FILE" class="ch.qos.logback.core.FileAppender"> 
+		<file>crawler.log</file>
+		<encoder>
+			<pattern>%d %le %logger - %m%n</pattern>
+    	</encoder>
+	</appender>
+	<logger name="no.bekk.bekkopen.mightycrawler" level="INFO">
+		<appender-ref ref="FILE" />
+		<appender-ref ref="STDOUT" />
+	</logger>
+	<logger name="org.apache.httpcomponents" level="INFO">
+		<appender-ref ref="FILE" />
+		<appender-ref ref="STDOUT" />
+	</logger>
+	<root level="OFF" />
+</configuration>
