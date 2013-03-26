@@ -1,4 +1,4 @@
-Version 0.7
+Version 0.7, mar 26, 2013
 
 * improved detection and logging of http redirects
 * database directory path now configurable
