@@ -6,7 +6,7 @@ Getting it
 
 Warning: Mightycrawler is experimental. Some features are not fully implemented.
 
-    git clone git://github.com/kristofd/mightycrawler.git
+    git clone git://github.com/kristoffer-dyrkorn/mightycrawler.git
     cd mightycrawler
     mvn clean package
 
@@ -14,9 +14,9 @@ Warning: Mightycrawler is experimental. Some features are not fully implemented.
 Description
 -----------
 
-Mightycrawler is a multithreaded web crawler with reporting capabilities. A separate thread pool (of configurable size) downloads resources in parallel, while content parsing and storage to disk is done by the main thread. During crawling, various statistics about the web site performance is gathered and put in a database. After crawling is done, user-specified queries are run against the database to produce various reports in plain text format.
+Mightycrawler is a multithreaded web crawler with reporting capabilities. Resources run in parallel threads (managed by a thread pool of configurable size), while content parsing and storage to disk is done by the main thread. During crawling, various statistics about the web site performance is gathered and put in a database. After crawling is done, user-specified queries are run against the database to produce various reports in plain text format.
 
-**Warning!** Mightycrawler is indeed mighty and can generate a lot of requests in short time. Please do use the program properly and with care.
+**Warning!** Mightycrawler is indeed mighty and can generate a lot of requests in short time. Please use this tool properly and with care - ensure there is a reasonable delay between each download request.
 
 
 Quick start
