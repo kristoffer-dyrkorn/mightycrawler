@@ -78,12 +78,11 @@ All options for running mightycrawler are given in the `crawler.properties` file
 
 * `reportSQL`: SQL statements that are run against the crawler database after completion. Output is sent to the filename specified. 
 Multiple SQLs can be provided, one per line, each line ending with \ and the next line starting with |.
-
 Example: 
 
-`reportSQL=SQL1@reportfile1.txt\
-|SQL2@reportfile2.txt\
-|SQL3@reportfile3.txt`
+    reportSQL=SQL1@reportfile1.txt\
+    |SQL2@reportfile2.txt\
+    |SQL3@reportfile3.txt`
 
 
 Tables in the crawler database
